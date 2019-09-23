@@ -1,0 +1,11 @@
+{
+  "name": "docker-on-ci",
+  "version": "1.0.0",
+  "description": "Just a hello world api",
+  "main": "source/index.js",
+  "scripts": {
+    "start": "node source/index.js"
+  },
+  "author": "Jeremie Drouet <jeremie.drouet@gmail.com>",
+  "license": "ISC"
+}
