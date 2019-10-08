@@ -1,4 +1,4 @@
-name: build postgis docker images
+name: build
 
 on: [push]
 
