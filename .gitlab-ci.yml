@@ -4,6 +4,7 @@ variables:
   CI_NAME: gitlab
   DOCKER_HOST: tcp://docker:2375/
   DOCKER_DRIVER: overlay2
+  DOCKER_CLI_EXPERIMENTAL: enabled
   IMAGE_BASE: registry.gitlab.com/jeremie.drouet/docker-on-ci
 
 services:

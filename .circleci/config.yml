@@ -4,6 +4,8 @@ jobs:
   build:
     docker:
       - image: docker:stable
+        environment:
+          DOCKER_CLI_EXPERIMENTAL: enabled
     steps:
       - checkout
       - run: apk add make curl
