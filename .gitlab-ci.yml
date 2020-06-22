@@ -1,21 +1,35 @@
+# image: docker:stable
+
+# variables:
+#   CI_NAME: gitlab
+#   DOCKER_HOST: tcp://docker:2375/
+#   DOCKER_DRIVER: overlay2
+#   IMAGE_BASE: registry.gitlab.com/jeremie.drouet/docker-on-ci
+
+# services:
+#   - docker:dind
+
+# before_script:
+#   - apk add curl make
+#   - docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
+#   - docker run --rm --privileged hypriot/qemu-register
+
+# build:
+#   stage: build
+#   script:
+#     - make prepare
+#     - make build-push
+
 image: docker:stable
-
+ 
 variables:
-  CI_NAME: gitlab
-  DOCKER_HOST: tcp://docker:2375/
-  DOCKER_DRIVER: overlay2
-  IMAGE_BASE: registry.gitlab.com/jeremie.drouet/docker-on-ci
-
+ DOCKER_HOST: tcp://docker:2375/
+ DOCKER_DRIVER: overlay2
+ 
 services:
-  - docker:dind
-
-before_script:
-  - apk add curl make
-  - docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
-  - docker run --rm --privileged hypriot/qemu-register
-
+ - docker:dind
+ 
 build:
-  stage: build
-  script:
-    - make prepare
-    - make build-push
+ stage: build
+ script:
+   - docker version
